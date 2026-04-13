@@ -1,0 +1,1906 @@
+/* =========================================
+   GLOBAL RESPONSIVE RESETS
+   ========================================= */
+
+html, body {
+    max-width: 100vw;
+    /* 'clip' stops horizontal zooming/scrolling without breaking sticky navbars! */
+    overflow-x: clip; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+/* Ensure the navbar stays pinned and on top of all other animations */
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1050 !important; /* Forces it over floating SVGs and cards */
+    background-color: #ffffff;
+}
+
+/* ========================================= */
+/* --- ABOUT US PAGE STYLES --- */
+/* ========================================= */
+@media (min-width: 992px) {
+    .my-lg-5 {
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+}
+/* --- Hero Banner --- */
+.about-hero-section {
+    background-color: var(--navy-dark);
+    padding: 100px 0 100px 0;
+    border-radius: 0 0 40px 40px; /* Modern curved bottom */
+}
+
+/* Floating Decorative Elements */
+.about-vector {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- New Lightning Bolt Animation --- */
+.vector-bolt-right { 
+    top: 20%; 
+    right: 10%; 
+    /* Keeps that smooth floating up-and-down animation */
+    animation: floatY 5s ease-in-out infinite reverse; 
+}
+
+/* --- Mechanical Wrench Animation --- */
+.vector-mech-tool { 
+    top: 15%; 
+    right: 18%; 
+    /* This makes the wrench pivot exactly around the hex nut! */
+    transform-origin: 17px 7px; 
+    animation: tightenWrench 8s ease-in-out infinite; 
+}
+
+@keyframes tightenWrench {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(20deg); }
+}
+
+/* --- Electrical Bulb Animation (Keep this the same) --- */
+.vector-elec-tool { 
+    top: 55%; 
+    right: 5%; 
+    animation: floatTool 6s ease-in-out infinite; 
+}
+
+@keyframes floatTool {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-15px) rotate(-5deg); }
+}
+
+.vector-circle-accent {
+    bottom: -20px;
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(144, 211, 74, 0.4); /* Theme Green border */
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    animation: rotateSlow 20s linear infinite;
+}
+
+.vector-circle-accent .inner-dot {
+    width: 25px;
+    height: 25px;
+    background-color: var(--theme-green); /* Theme Green solid circle */
+    border-radius: 50%;
+    transform: translate(-10px, 10px);
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes rotateSlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Visual Grid (Left Column) --- */
+/* --- Custom 1300px Container --- */
+.custom-container-1350 {
+    max-width: 1400px !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.about-visual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.about-stat-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 24px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease;
+}
+
+.about-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background: rgba(144, 211, 74, 0.15); /* Soft green bg */
+    color: var(--theme-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.about-img-box {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-img-box:hover img {
+    transform: scale(1.05);
+}
+
+.about-img-box.img-small {
+    height: 220px;
+}
+
+.about-img-box.img-large {
+    grid-column: 1 / -1; /* Spans both columns */
+    height: 250px;
+}
+
+.about-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--navy-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.about-play-btn:hover {
+    background: var(--theme-green);
+    color: var(--navy-dark);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- Features (Right Column) --- */
+.feature-icon {
+    font-size: 2rem;
+    color: var(--theme-green);
+}
+
+/* --- Scroll Animations --- */
+.about-anim-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.about-anim-stagger {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.about-anim-fade-up.play-anim,
+.about-anim-stagger.play-anim {
+    animation: aboutFadeUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes aboutFadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================= */
+/* --- RESPONSIVE ADJUSTMENTS --- */
+/* ========================================= */
+
+/* --- TABLETS & SMALL DESKTOPS (Max 991px) --- */
+@media (max-width: 991px) {
+    /* Reduce hero padding and curve slightly for mid-sized screens */
+    .about-hero-section {
+        padding: 70px 0;
+        border-radius: 0 0 30px 30px;
+    }
+
+    /* Scale down the floating vectors and push them closer to the edges */
+    .vector-bolt-right { right: 2%; transform: scale(0.8); }
+    .vector-mech-tool { right: 5%; transform: scale(0.8); }
+    .vector-elec-tool { right: 2%; transform: scale(0.8); }
+    .vector-gear-left { left: 2%; transform: scale(0.8); }
+    .vector-circle-accent { left: 5%; transform: scale(0.8); }
+}
+
+/* --- MOBILE PHONES & iPHONES (Max 767px) --- */
+@media (max-width: 767px) {
+    /* Tighter hero padding for small screens */
+    .about-hero-section {
+        padding: 50px 0;
+        border-radius: 0 0 20px 20px;
+    }
+
+    /* Hide background vectors to keep mobile clean and prevent horizontal scrolling */
+    .about-vector, .vector-circle-accent {
+        display: none !important;
+    }
+
+    /* Visual Grid Stacking */
+    .about-visual-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Scale down image heights to fit phone viewports beautifully */
+    .about-img-box.img-large {
+        grid-column: 1;
+        height: 200px; 
+    }
+
+    .about-img-box.img-small {
+        height: 180px; 
+    }
+
+    /* Reduce padding inside the stat card */
+    .about-stat-card {
+        padding: 20px 15px;
+    }
+}
+/* --- New Gear Vector Animation --- */
+.vector-gear-left { 
+    top: 25%; 
+    left: 8%; 
+    animation: rotateGear 15s linear infinite; 
+}
+
+@keyframes rotateGear {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Interactive Hover Icon Flips --- */
+/* Target the 'i' tags inside both the stat box and the feature boxes */
+.stat-icon-wrapper i,
+.feature-icon i {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block; /* Required for transform to work on inline elements */
+}
+
+/* When the user hovers over the CARD, flip the ICON inside it */
+.about-stat-card:hover .stat-icon-wrapper i,
+.about-feature-box:hover .feature-icon i {
+    transform: rotateY(180deg); /* Flips the icon 3D horizontally */
+}
+
+/* Optional: Slight lift for the feature boxes on hover to match the stat card */
+.about-feature-box {
+    padding: 15px;
+    border-radius: 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-feature-box:hover {
+    transform: translateY(-3px);
+    background: rgba(144, 211, 74, 0.03); /* Extremely subtle green background on hover */
+}
+
+
+/* --- Video Background Styles --- */
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0; 
+}
+
+/* Beautiful deep navy overlay - Opacity lowered so the video pops! */
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient starts at 70% opacity and fades to 40% opacity */
+    background: linear-gradient(135deg, rgba(0, 45, 81, 0.7) 0%, rgba(0, 45, 81, 0.4) 100%);
+    z-index: 1; 
+}
+
+/* Ensure text sits on top */
+.about-hero-section .container.z-3 {
+    z-index: 3 !important; 
+}
+
+/* ========================================= */
+/* --- APPROACH SECTION STYLES --- */
+/* ========================================= */
+
+.approach-section {
+    background-color: var(--light-bg); 
+}
+
+.custom-container-1300 {
+    max-width: 1350px !important;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Approach Cards: Bottom-to-Up Hover Fill --- */
+.approach-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    z-index: 1;
+    overflow: hidden; /* Keeps the color fill inside the rounded corners */
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    cursor: default;
+}
+
+/* The invisible background layer that slides up */
+.approach-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* Starts at 0 height */
+    background-color: var(--navy-dark); /* Fills with Navy Blue */
+    z-index: -1;
+    transition: height 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth slide up */
+}
+
+/* Trigger the color fill on hover */
+.approach-card:hover::before {
+    height: 100%;
+}
+
+/* Lift the card slightly */
+.approach-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--navy-dark);
+    box-shadow: 0 20px 40px rgba(0, 45, 81, 0.15);
+}
+
+/* Icon Box Styling */
+.approach-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(144, 211, 74, 0.15);
+    color: var(--theme-green);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    transition: background 0.5s ease;
+}
+
+/* 3D Icon Flip */
+.approach-card .card-icon i {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.approach-card:hover .card-icon i {
+    transform: rotateY(180deg); /* Flips icon horizontally */
+}
+
+/* Change Icon background to pop against navy */
+.approach-card:hover .card-icon {
+    background: rgba(255, 255, 255, 0.1); 
+}
+
+/* Change Text Colors smoothly when background turns navy */
+.approach-card h4.transition-color { color: var(--navy-dark); transition: color 0.4s ease; }
+.approach-card p.transition-color { color: var(--gray-text); transition: color 0.4s ease; }
+
+.approach-card:hover h4.transition-color { color: #ffffff; }
+.approach-card:hover p.transition-color { color: rgba(255, 255, 255, 0.85); }
+
+
+/* ========================================= */
+/* --- Right Column Visuals (Attractive Mosaic) --- */
+/* ========================================= */
+.approach-visual-mosaic {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+/* Lime Green Decorative Square behind the images */
+.mosaic-accent-shape {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 60%;
+    height: 70%;
+    background-color: var(--theme-green);
+    border-radius: 24px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* Back Image: aligned to the right */
+.approach-visual-mosaic .img-back {
+    width: 70%;
+    margin-left: auto; /* Pushes it to the right */
+    position: relative;
+    z-index: 1;
+    transform: translateY(20px); /* Offsets it slightly down */
+}
+
+/* Front Image: pulled to the left, overlapping the back */
+.approach-visual-mosaic .img-front {
+    width: 75%;
+    position: relative;
+    z-index: 2;
+    margin-top: -20%; /* Pulls it up over the back image */
+}
+
+/* Thick white border to frame the images beautifully */
+.border-white-thick {
+    border: 12px solid #ffffff;
+}
+
+/* Setting specific heights for image aspect ratio continuity */
+.img-back img { height: 380px; }
+.img-front img { height: 420px; }
+
+/* Image Hover Zoom */
+.approach-visual-mosaic img { transition: transform 0.6s ease; }
+.approach-visual-mosaic :hover img { transform: scale(1.03); }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .approach-text-col { margin-bottom: 50px; }
+    .approach-visual-mosaic .img-front { margin-top: -15%; width: 85%; }
+    .mosaic-accent-shape { width: 80%; }
+    .img-back img { height: 280px; }
+    .img-front img { height: 320px; }
+}
+
+/* --- Scroll Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(30px); }
+.anim-stagger { opacity: 0; transform: translateY(30px); }
+.play-anim { animation: smoothFadeUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+
+@keyframes smoothFadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================= */
+/* --- Right Column: Centered Image & Blob --- */
+/* ========================================= */
+
+.approach-visual-single {
+    min-height: 550px;
+    padding: 40px 0;
+}
+
+/* Single Centered Image Styling */
+.single-img-wrapper {
+    width: 85%;
+    max-width: 500px;
+    transition: transform 0.6s ease;
+    margin-top: 30px;
+}
+
+.single-img-wrapper img {
+    height: 550px;
+    border: 12px solid #ffffff; 
+}
+
+.single-img-wrapper:hover {
+    transform: scale(1.03); 
+}
+
+/* ========================================= */
+/* --- NEW Morphing Blob Animation --- */
+/* ========================================= */
+
+.morphing-blob-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px; /* Size of the shape */
+    height: 560px;
+    /* A very soft, semi-transparent light green gradient */
+    background: linear-gradient(135deg, rgba(144, 211, 74, 0.25) 0%, rgba(144, 211, 74, 0.05) 100%);
+    z-index: 0;
+    /* Softens the edges of the shape slightly */
+    filter: blur(8px); 
+    
+    /* Applies both the shape-shifting and the movement animations */
+    animation: 
+        morphShape 8s ease-in-out infinite, 
+        moveBlob 12s ease-in-out infinite alternate;
+}
+
+/* 1. Animation that shifts the border-radius to warp the shape */
+@keyframes morphShape {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* 2. Animation that slowly translates and rotates the entire shape */
+@keyframes moveBlob {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1); 
+    }
+    100% { 
+        transform: translate(-45%, -55%) rotate(15deg) scale(1.05); 
+    }
+}
+
+/* Responsive constraints for smaller screens */
+@media (max-width: 991px) {
+    .approach-visual-single { min-height: 400px; margin-top: 20px; }
+    .single-img-wrapper img { height: 400px; }
+    .morphing-blob-bg {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+/* ========================================= */
+/* --- WHO WE ARE SECTION STYLES --- */
+/* ========================================= */
+
+.who-we-are-section {
+    background-color: #ffffff;
+}
+
+/* --- Left Column Visuals --- */
+.who-img-wrapper {
+    position: relative;
+    padding: 30px 20px 40px 40px; /* Space for absolute elements */
+}
+
+/* Decorative backdrop shape */
+.img-bg-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 90%;
+    background-color: var(--theme-green);
+    border-radius: 40px 10px 40px 10px;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+/* Main Image */
+.main-who-img {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 40px 10px 40px 10px; /* Modern geometric border */
+    border: 8px solid #ffffff;
+}
+
+/* --- Vertical Expertise Badge --- */
+.vertical-expertise-badge {
+    position: absolute;
+    top: 40px;
+    right: 5%;
+    background: var(--navy-dark);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.vertical-expertise-badge .badge-text {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 25px 10px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.vertical-expertise-badge .badge-bottom {
+    background: var(--theme-green);
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--navy-dark);
+    font-size: 1.2rem;
+}
+
+/* --- Glassmorphism Stats Card --- */
+.glass-stat-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* Frost effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 15px;
+    z-index: 3;
+    width: 250px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--navy-dark);
+    color: var(--theme-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.stat-info h3 {
+    color: var(--navy-dark);
+    font-size: 1.4rem;
+}
+
+.stat-info p {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stat-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+/* --- Floating Animations --- */
+.float-anim { animation: floatBox 6s ease-in-out infinite; }
+.float-anim-delayed { animation: floatBox 7s ease-in-out infinite reverse; }
+
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- Right Column Content --- */
+.highlight-callout-box {
+    background-color: rgba(144, 211, 74, 0.05); /* Very light green tint */
+    border-left: 5px solid var(--theme-green);
+}
+
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    background: var(--navy-dark);
+    color: var(--theme-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-info-block:hover .icon-circle {
+    transform: rotate(15deg) scale(1.05);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .who-img-wrapper { padding: 0; margin-bottom: 40px; }
+    .main-who-img { width: 100%; height: 450px; border-radius: 30px; }
+    .img-bg-shape { display: none; } /* Hide on mobile to save space */
+    
+    .vertical-expertise-badge { right: 10px; top: -15px; }
+    
+    .glass-stat-card {
+        width: 90%;
+        left: 5%;
+        bottom: -90px;
+        padding: 15px;
+    }
+    
+    .approach-text-col { margin-top: 40px; }
+}
+
+
+/* --- Core Values Custom Styles --- */
+.core-values-section {
+    background-color: #ffffff;
+}
+
+.tag-dot {
+    width: 8px; height: 8px;
+    background: var(--theme-green);
+    border-radius: 50%;
+}
+
+.value-hex-card {
+    position: relative;
+    height: 100%;
+    padding: 2px; /* For the border animation space */
+    background: #f8fafc;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.value-card-inner {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 22px;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.value-icon {
+    width: 70px; height: 70px;
+    margin: 0 auto 20px;
+    background: var(--navy-dark);
+    color: var(--theme-green);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: all 0.4s ease;
+}
+
+.value-hex-card h4 {
+    color: var(--navy-dark);
+    margin-bottom: 15px;
+}
+
+.value-hex-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Hover Interaction: 3D Lift & Icon Swap */
+.value-hex-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 45, 81, 0.1);
+}
+
+.value-hex-card:hover .value-icon {
+    background: var(--theme-green);
+    color: var(--navy-dark);
+    transform: rotateY(180deg);
+}
+
+/* Featured Value (Trust) Styling */
+.featured-value {
+    border: 1px solid rgba(144, 211, 74, 0.3);
+}
+
+/* Vision Quote Box */
+.vision-quote-box {
+    background: var(--navy-dark);
+    border-radius: 20px;
+    color: white;
+    position: relative;
+}
+
+.italic-vision {
+    font-size: 1.15rem;
+    font-style: italic;
+    opacity: 0.9;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.trust-highlight {
+    color: var(--theme-green);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Border Trace Animation */
+.card-border-anim {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: 2px solid var(--theme-green);
+    border-radius: 24px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.value-hex-card:hover .card-border-anim {
+    opacity: 1;
+    animation: borderTrace 2s linear infinite;
+}
+
+@keyframes borderTrace {
+    0%, 100% { clip-path: inset(0 0 95% 0); }
+    25% { clip-path: inset(0 0 0 95%); }
+    50% { clip-path: inset(95% 0 0 0); }
+    75% { clip-path: inset(0 95% 0 0); }
+}
+
+/* ========================================= */
+/* --- Indus CTA (Dark/Glow) Styles --- */
+/* ========================================= */
+
+.indus-cta-section {
+    perspective: 1000px; /* Crucial for the 3D tilt interaction */
+}
+
+/* --- Floating Glass Content Card --- */
+.glass-cta-card {
+    /* Uses Navy-Dark as the card color with blur */
+    background: rgba(0, 45, 81, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Faint white border */
+    position: relative;
+    z-index: 10;
+    cursor: default;
+    transition: transform 0.2s ease-out; /* For JS tilt */
+}
+
+/* --- Typography & Colors --- */
+.nano-dot {
+    width: 6px; height: 6px;
+    background: var(--theme-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--theme-green);
+}
+
+.tag-text {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--theme-green);
+    font-size: 0.75rem;
+}
+
+.text-lime-gradient {
+    /* Subtle white to lime green gradient */
+    background: linear-gradient(90deg, #ffffff, var(--theme-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.indus-cta-section .display-4 {
+    color: #ffffff;
+}
+
+.cta-narrative {
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.7;
+}
+
+/* --- Magnetic Action Button --- */
+.kinetic-btn-primary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 36px;
+    background: transparent;
+    border: 2px solid var(--theme-green);
+    border-radius: 50px;
+    color: var(--theme-green);
+    font-weight: 700;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 2;
+    transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+/* The 'magnetic' content inside the button */
+.btn-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.1s linear; /* Fast response to JS magnetic movement */
+}
+
+/* The background that 'pours' into the button on hover */
+.btn-fill {
+    position: absolute;
+    bottom: -100%; left: 0; width: 100%; height: 100%;
+    background: var(--theme-green);
+    z-index: -1;
+    transition: bottom 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.kinetic-btn-primary:hover .btn-fill {
+    bottom: 0;
+}
+
+.kinetic-btn-primary:hover {
+    color: var(--navy-dark) !important;
+    border-color: var(--theme-green) !important;
+    box-shadow: 0 10px 25px rgba(144, 211, 74, 0.3);
+}
+/* ========================================= */
+/* --- THEME COLORS --- */
+/* ========================================= */
+:root {
+    --theme-blue: #0f568d;   
+    --theme-green: #9cc13b;  
+    --navy-dark: #1b486a;
+}
+
+/* ========================================= */
+/* --- 1. THE STICKY BACKGROUND WRAPPER --- */
+/* ========================================= */
+.sticky-parallax-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 80px 0; /* Space above and below the box to allow scrolling */
+    
+    /* THE MAGIC: Fixed Background */
+    background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1920'); /* Replace with your Lightbulb image */
+    background-attachment: fixed; /* Locks image to the screen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Optional: Dark tint over the background image */
+.sticky-parallax-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dims the lightbulb slightly */
+    z-index: 1;
+}
+
+/* ========================================= */
+/* --- 2. THE SCROLLING CTA BOX --- */
+/* ========================================= */
+.floating-cta-card {
+    position: relative;
+    background: rgba(10, 31, 53, 0.85); /* Deep navy, slightly transparent */
+    backdrop-filter: blur(12px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle premium border */
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    overflow: visible; /* Allows the right image to pop out if needed */
+    z-index: 5;
+}
+
+/* --- Typography & Elements --- */
+.theme-dot {
+    width: 8px; height: 8px;
+    background-color: var(--theme-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--theme-green);
+}
+
+.hover-green { transition: color 0.3s ease; }
+.hover-green:hover { color: var(--theme-green) !important; }
+
+/* --- Theme Button --- */
+.btn-theme-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-green);
+    color: #000000; /* High contrast black text on lime */
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--theme-green);
+}
+
+.btn-theme-solid:hover {
+    background-color: transparent;
+    color: var(--theme-green);
+    transform: translateY(-3px);
+}
+
+/* --- Phone Block --- */
+.phone-icon-box {
+    width: 48px; height: 48px;
+    background-color: var(--theme-green);
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.phone-block:hover .phone-icon-box {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* --- Foreground Subject (Engineer) --- */
+.foreground-subject {
+    /* Existing properties to ensure it fits the container */
+    max-width: 100%;
+    height: auto;
+    max-height: 450px; 
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,1) 15%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,1) 0%);
+    object-position: right bottom; 
+}
+/* .foreground-subject {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+} */
+
+/* --- Entrance Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.anim-reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+
+.is-visible.anim-fade-up { opacity: 1; transform: translateY(0); }
+.is-visible.anim-reveal-left { opacity: 1; transform: translateX(0); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+    /* Mobile browsers struggle with fixed backgrounds, better to switch to scroll */
+    .sticky-parallax-wrapper { background-attachment: scroll; padding: 40px 0; }
+    .floating-cta-card { margin: 0 15px; }
+}
+/* --- Tech-Line Card (Phone Info) --- */
+.divider-text {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.tech-line-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 20px;
+}
+
+.tech-icon {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--navy-dark);
+    color: var(--theme-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-line-card:hover .tech-icon {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.tech-details small {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.65rem;
+}
+
+.tech-details .tel-number {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.tech-line-card:hover .tel-number {
+    color: var(--theme-green);
+}
+
+/* --- Moving SVG Pattern Background --- */
+.cta-pattern-bg {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 H90 V90 H10 Z' fill='none' stroke='%2390d34a' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%2390d34a' fill-opacity='0.2'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+    opacity: 0.8;
+    z-index: 1;
+    animation: driftPattern 15s linear infinite;
+}
+
+@keyframes driftPattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+/* --- Animated Glowing Border (Glow effect) --- */
+.glass-border-anim {
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-radius: inherit;
+    z-index: 5;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(144, 211, 74, 0.3) 50%, rgba(255,255,255,0.05) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0.2;
+    transition: opacity 0.4s;
+}
+
+.glass-cta-card:hover .glass-border-anim {
+    opacity: 1; /* Glow intensifies on hover */
+}
+
+/* --- Responsive Layout Tweaks --- */
+@media (max-width: 991px) {
+    .indus-cta-section { text-align: center; }
+    .interaction-wrap { width: 100%; margin-top: 30px; justify-content: center !important; }
+    .kinetic-btn-primary { width: 100%; justify-content: center; }
+    .tag-text { display: block; width: 100%; }
+}
+
+/* ========================================= */
+/* --- WHY CHOOSE US - FIXED STYLES --- */
+/* ========================================= */
+.why-choose-us-section {
+    background-color: var(--light-bg);
+}
+.max-w-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* --- 1. The Interactive Cards --- */
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden; /* Contains the background image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Background Image Container (Fixed z-index) */
+.card-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 1; /* Sits ABOVE the white background */
+    transition: opacity 0.5s ease;
+}
+
+/* Dark tint so text is readable over the image */
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 45, 81, 0.85); /* Navy dark tint */
+}
+
+/* Elevate content above the background image */
+.info-card .icon-box, 
+.info-card .card-content {
+    position: relative;
+    z-index: 2; 
+}
+
+/* Default Text Colors */
+.info-card h5.transition-color { color: var(--navy-dark); transition: color 0.4s; font-size: 1.25rem; }
+.info-card p.transition-color { color: var(--gray-text); transition: color 0.4s; font-size: 0.95rem; }
+
+.icon-box {
+    width: 60px; height: 60px;
+    background: rgba(144, 211, 74, 0.15);
+    color: var(--theme-green);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+/* --- Card Hover Effects --- */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+.info-card:hover .card-bg-image { opacity: 1; } /* Reveals Image */
+.info-card:hover .icon-box { background: var(--theme-green); color: var(--navy-dark); transform: scale(1.05); }
+.info-card:hover h5.transition-color { color: #ffffff; }
+.info-card:hover p.transition-color { color: rgba(255, 255, 255, 0.85); }
+
+
+/* --- 2. The Premium Overlapping Visuals --- */
+.premium-collage-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    cursor: pointer;
+}
+
+.collage-back-img {
+    position: absolute;
+    top: 0; right: 0;
+    width: 80%; height: 400px;
+    border-radius: 40px 10px 40px 10px;
+    overflow: hidden;
+}
+
+.collage-front-img {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 70%; height: 350px;
+    border-radius: 10px 40px 10px 40px;
+    overflow: hidden;
+    border: 12px solid #ffffff; /* Thick white cutout line */
+    z-index: 5;
+}
+
+.premium-collage-wrapper img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.premium-collage-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* --- 3. The Flash Animation --- */
+.flash-sheen {
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* JS adds this class on hover */
+.play-flash .flash-sheen {
+    animation: flashSweep 0.8s ease-out;
+}
+
+@keyframes flashSweep {
+    0% { left: -150%; }
+    100% { left: 200%; }
+}
+
+/* --- Scroll Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(30px); }
+.anim-reveal-right { opacity: 0; transform: translateX(50px); }
+.is-visible .anim-fade-up { animation: smoothFadeUp 0.8s ease forwards; }
+.is-visible .anim-reveal-right { animation: smoothRevealRight 1s ease forwards; }
+
+@keyframes smoothFadeUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes smoothRevealRight { to { opacity: 1; transform: translateX(0); } }
+
+.is-visible.staggered-items > div:nth-child(1) { animation-delay: 0.1s; }
+.is-visible.staggered-items > div:nth-child(2) { animation-delay: 0.2s; }
+.is-visible.staggered-items > div:nth-child(3) { animation-delay: 0.3s; }
+.is-visible.staggered-items > div:nth-child(4) { animation-delay: 0.4s; }
+.delay-2s { animation-delay: 0.2s !important; }
+.delay-3s { animation-delay: 0.3s !important; }
+
+@media (max-width: 991px) {
+    .premium-collage-wrapper { min-height: 400px; margin-top: 40px; }
+    .collage-back-img { width: 90%; height: 300px; }
+    .collage-front-img { width: 80%; height: 250px; bottom: -30px; }
+}
+
+/* ========================================= */
+/* --- ROOT THEME COLORS --- */
+/* ========================================= */
+:root {
+    --theme-blue: #0f568d;   
+    --theme-green: #9cc13b;  
+    --navy-dark: #1b486a;
+    --hero-bg: #f4f7fa;      
+    
+    --card-border: #e2e8f0;
+    --text-gray: #64748b;
+}
+
+.trust-theme-section {
+    background-color: #ffffff;
+}
+.max-w-800 { max-width: 800px; }
+
+/* --- Heading Wave Animation --- */
+.wave-heading {
+    background: linear-gradient(
+        to right, 
+        var(--navy-dark) 0%, 
+        var(--theme-blue) 30%, 
+        var(--theme-green) 50%, 
+        var(--theme-blue) 70%, 
+        var(--navy-dark) 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textWave 4s linear infinite;
+}
+
+@keyframes textWave {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* ========================================= */
+/* --- 1. Interactive Theme Cards --- */
+/* ========================================= */
+.theme-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 25px 30px;
+    position: relative;
+    overflow: hidden; /* Contains background image */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Dynamic Background Image Layer */
+.card-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* Color tint over the background image so text is readable */
+.card-bg-layer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 86, 141, 0.85); /* Uses --theme-blue with opacity */
+}
+
+/* Ensure content stays above the background */
+.theme-icon, .theme-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Default Text & Icon Styling */
+.theme-icon {
+    font-size: 2.2rem;
+    color: var(--theme-green);
+    margin-top: 5px;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.theme-content h5.text-transition {
+    color: var(--navy-dark);
+    font-size: 1.25rem;
+    transition: color 0.4s ease;
+}
+
+.theme-content p.text-transition {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    transition: color 0.4s ease;
+}
+
+/* --- Card Hover Interactivity --- */
+.theme-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(27, 72, 106, 0.15); /* Shadow using navy-dark */
+    border-color: transparent;
+}
+
+/* Reveal Background Image */
+.theme-card:hover .card-bg-layer { opacity: 1; }
+
+/* Shift Text to White */
+.theme-card:hover h5.text-transition,
+.theme-card:hover p.text-transition { 
+    color: #ffffff; 
+}
+
+/* Animate Icon */
+.theme-card:hover .theme-icon {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Pre-active state to match your screenshot example */
+.theme-card.active-state .card-bg-layer { opacity: 1; }
+.theme-card.active-state h5.text-transition,
+.theme-card.active-state p.text-transition { color: #ffffff; }
+
+
+/* --- CTA Button (Using Theme Green) --- */
+.btn-theme-green {
+    background-color: var(--theme-green);
+    color: #ffffff; /* Or var(--navy-dark) if you prefer dark text */
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-theme-green:hover {
+    background-color: var(--theme-blue);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(15, 86, 141, 0.2);
+}
+
+
+/* ========================================= */
+/* --- 2. Bulletproof Puzzle Collage --- */
+/* ========================================= */
+.puzzle-wrapper {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(27, 72, 106, 0.15);
+    background: var(--hero-bg);
+}
+
+.puzzle-base-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+/* Image zoom on wrapper hover */
+.puzzle-wrapper:hover .puzzle-base-img {
+    transform: scale(1.05);
+}
+
+/* --- Responsive CSS Puzzle Lines --- */
+/* These absolute borders draw the puzzle shapes PERFECTLY on every browser */
+.puzzle-line {
+    position: absolute;
+    background: transparent;
+    border: 14px solid #ffffff; /* Thick white gaps */
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* 1. Top Right Pill Cutout */
+.piece-top-right {
+    top: -14px; right: -14px;
+    width: 40%; height: 32%;
+    border-bottom-left-radius: 40px;
+    border-top: none; border-right: none;
+}
+
+/* 2. Middle Snaking U-Shape */
+.piece-middle-left {
+    top: 40%; left: -14px;
+    width: 70%; height: 25%;
+    border-top-right-radius: 40px; border-bottom-right-radius: 40px;
+    border-left: none;
+}
+
+/* 3. Bottom Right Corner Cutout */
+.piece-bottom-right {
+    bottom: -14px; right: -14px;
+    width: 45%; height: 22%;
+    border-top-left-radius: 40px;
+    border-bottom: none; border-right: none;
+}
+
+/* --- Interactive Flash Sheen --- */
+.interactive-sheen {
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* JS triggers this class on hover */
+.play-realtime-flash .interactive-sheen {
+    animation: flashSweep 0.8s ease-out forwards;
+}
+
+@keyframes flashSweep {
+    0% { left: -150%; }
+    100% { left: 200%; }
+}
+
+/* --- Standard Scroll Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.anim-reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 1s ease, transform 1s ease; }
+
+.is-visible.anim-fade-up { opacity: 1; transform: translateY(0); }
+.is-visible.anim-reveal-right { opacity: 1; transform: translateX(0); }
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+    .puzzle-wrapper { height: 450px; margin-top: 50px; }
+    .puzzle-line { border-width: 10px; }
+}
+/* ========================================= */
+/* --- ARCH & ORB IMAGE COMPOSITION --- */
+/* ========================================= */
+
+.arch-visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* --- 1. The Main Arch Image --- */
+.arch-image-container {
+    position: relative;
+    width: 75%;
+    height: 95%;
+    /* Creates the elegant Arch Shape: drastically rounded top, slightly rounded bottom */
+    border-radius: 250px 250px 24px 24px;
+    overflow: hidden;
+    z-index: 2;
+    border: 8px solid #ffffff; /* Thick premium border */
+    box-shadow: 0 25px 50px rgba(27, 72, 106, 0.15); /* Soft navy shadow */
+    transition: transform 0.5s ease;
+}
+
+.arch-image-container img {
+    transition: transform 0.8s ease;
+}
+
+/* Hover effect on the main image */
+.arch-visual-wrapper:hover .arch-image-container img {
+    transform: scale(1.05); 
+}
+
+/* --- 2. The Overlapping Circle Image --- */
+.circle-image-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%; /* Perfect circle */
+    overflow: hidden;
+    z-index: 3;
+    border: 8px solid #ffffff;
+    box-shadow: 0 15px 35px rgba(27, 72, 106, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.circle-image-container img {
+    transition: transform 0.8s ease;
+}
+
+/* Floating lift effect on hover */
+.arch-visual-wrapper:hover .circle-image-container {
+    transform: translateY(-15px) scale(1.02);
+}
+
+/* --- 3. Background Decor (Glow & Dots) --- */
+.ambient-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    /* Uses your theme green for a subtle backlight */
+    background: radial-gradient(circle, rgba(156, 193, 59, 0.15) 0%, transparent 70%);
+    z-index: 0;
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+.dot-grid-accent {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 140px;
+    height: 140px;
+    /* Draws a grid of green dots */
+    background-image: radial-gradient(var(--theme-green, #9cc13b) 2.5px, transparent 2.5px);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+    .arch-visual-wrapper { height: 450px; margin-top: 40px; }
+    .arch-image-container { width: 85%; }
+    .circle-image-container { 
+        width: 180px; 
+        height: 180px; 
+        bottom: 10px; 
+        border-width: 6px; 
+    }
+}
+
+/* ========================================= */
+/* --- THEME COLORS --- */
+/* ========================================= */
+:root {
+    --theme-blue: #0f568d;   
+    --theme-green: #9cc13b;  
+    --navy-dark: #1b486a;
+}
+
+.theme-green-text { color: var(--theme-green); }
+.theme-dot {
+    width: 8px; height: 8px;
+    background-color: var(--theme-green);
+    border-radius: 50%;
+}
+
+.dynamic-milestones-section {
+    background-color: #f6f9fc; /* Soft cool background */
+    overflow: hidden;
+}
+
+/* ========================================= */
+/* --- MINIMAL ORGANIC BACKGROUND --- */
+/* ========================================= */
+.dynamic-vector-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Soft, blurry ambient glowing orbs */
+.minimal-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* Creates the ultra-soft minimal look */
+    opacity: 0.6;
+    animation: floatGlow 20s infinite alternate ease-in-out;
+}
+
+.glow-1 {
+    top: 10%; left: 10%; 
+    width: 400px; height: 400px;
+    background: rgba(156, 193, 59, 0.08); /* Faint Theme Green */
+}
+
+.glow-2 {
+    bottom: 10%; right: 10%; 
+    width: 500px; height: 500px;
+    background: rgba(15, 86, 141, 0.06); /* Faint Theme Blue */
+    animation-delay: -5s; /* Offsets the animation timing */
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(80px, 120px) scale(1.1); }
+}
+
+/* ========================================= */
+/* --- PERFECTED ACCORDION STYLES --- */
+/* ========================================= */
+.sleek-accordion-wrapper {
+    display: flex;
+    width: 100%;
+    height: 420px; 
+    gap: 12px;
+    padding: 10px;
+}
+
+/* Default state: Inactive panels are nicely balanced */
+.s-panel {
+    position: relative;
+    border-radius: 16px; 
+    overflow: hidden;
+    cursor: pointer;
+    flex: 1.5; /* Inactive width */
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    background: var(--navy-dark);
+}
+
+/* Active State Expansion */
+.s-panel.active {
+    flex: 5.5; 
+}
+
+/* Hover Physics: Expands only the hovered panel, shrinks the rest */
+.sleek-accordion-wrapper:hover .s-panel.active { flex: 1.5; }
+.sleek-accordion-wrapper:hover .s-panel:hover { flex: 5.5; }
+
+/* --- Panel Images --- */
+.s-panel-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.6s ease, transform 6s linear;
+    filter: grayscale(60%) brightness(0.7); 
+}
+
+/* Image zoom/color restoration */
+.s-panel:hover .s-panel-bg, .s-panel.active .s-panel-bg {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.08); 
+}
+
+/* Restore the grey filter if another panel is hovered */
+.sleek-accordion-wrapper:hover .s-panel.active:not(:hover) .s-panel-bg {
+    filter: grayscale(60%) brightness(0.7);
+    transform: scale(1);
+}
+
+/* --- Gradient Text Overlay --- */
+.s-panel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 86, 141, 0.95) 0%, rgba(15, 86, 141, 0) 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.s-panel:hover .s-panel-overlay, .s-panel.active .s-panel-overlay { opacity: 1; }
+.sleek-accordion-wrapper:hover .s-panel.active:not(:hover) .s-panel-overlay { opacity: 0; }
+
+/* --- Panel Text Content --- */
+.s-panel-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; 
+}
+
+/* Reveal text smoothly when expanded */
+.s-panel:hover .s-panel-content, .s-panel.active .s-panel-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; 
+}
+
+/* Hide active text if another panel is hovered */
+.sleek-accordion-wrapper:hover .s-panel.active:not(:hover) .s-panel-content {
+    opacity: 0;
+    transform: translateY(15px);
+    transition-delay: 0s;
+}
+
+.s-client {
+    color: var(--theme-green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.s-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.s-location {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- Entrance Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.is-visible.anim-fade-up { opacity: 1; transform: translateY(0); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+    .sleek-accordion-wrapper { flex-direction: column; height: 600px; }
+    .s-panel-content { white-space: normal; padding: 20px; }
+    .s-title { font-size: 1.2rem; }
+}
+.my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 0rem!important;
+}
+
+.main-footer {
+    background: linear-gradient(135deg, #092943 0%, #092d49 100%);
+    color: #ffffff;
+    position: relative;
+    padding-top: 20px;
+    margin-top: 0px;
+    border-top: 4px solid var(--theme-green);
+}

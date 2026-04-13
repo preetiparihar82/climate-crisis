@@ -1,0 +1,84 @@
+/* ========================================= */
+/* --- CONTACT PAGE STYLES --- */
+/* ========================================= */
+
+/* --- INFO CARDS --- */
+.contact-info-card {
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(27, 72, 106, 0.1) !important;
+    border-color: rgba(156, 193, 59, 0.3) !important;
+}
+
+.contact-info-card .icon-wrap {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(156, 193, 59, 0.15); /* Soft green background */
+    color: var(--theme-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .icon-wrap {
+    background-color: var(--theme-green);
+    color: #ffffff;
+}
+
+/* --- CUSTOM FORM STYLES --- */
+.custom-contact-form .form-control,
+.custom-contact-form .form-select {
+    background-color: #f8fafc;
+    border: 1px solid rgba(27, 72, 106, 0.1);
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    color: var(--navy-dark);
+    transition: all 0.3s ease;
+}
+
+.custom-contact-form .form-control:focus,
+.custom-contact-form .form-select:focus {
+    background-color: #ffffff;
+    border-color: var(--theme-green);
+    box-shadow: 0 0 0 4px rgba(156, 193, 59, 0.15);
+    outline: none;
+}
+
+.custom-contact-form .form-control::placeholder {
+    color: #a0aec0;
+}
+
+/* Form validation styling */
+.custom-contact-form .form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: none; /* Removes default bootstrap cross icon */
+}
+
+.custom-contact-form .invalid-feedback {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- MAP WRAPPER --- */
+.map-wrapper {
+    transition: box-shadow 0.3s ease;
+}
+
+.map-wrapper:hover {
+    box-shadow: 0 15px 35px rgba(27, 72, 106, 0.1) !important;
+}
+
+/* Hover utility */
+.hover-green {
+    transition: color 0.2s ease;
+}
+.hover-green:hover {
+    color: var(--theme-green) !important;
+}

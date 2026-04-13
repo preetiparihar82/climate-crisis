@@ -1,0 +1,799 @@
+/* ========================================= */
+/* --- THEME COLORS & VARIABLES --- */
+/* ========================================= */
+
+:root {
+    --theme-blue: #0f568d;   
+    --theme-green: #9cc13b;  
+    --navy-dark: #1b486a;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+}
+.my-5 {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
+
+.editorial-services-section {
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.theme-green-text { color: var(--theme-green); }
+
+.theme-dot {
+    width: 10px; height: 10px;
+    background: linear-gradient(135deg, var(--theme-green), #7a992d);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(156, 193, 59, 0.4);
+}
+
+
+/* ========================================= */
+/* --- TYPOGRAPHY & HEADERS --- */
+/* ========================================= */
+.expertise-badge {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(27, 72, 106, 0.08);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--theme-green), var(--theme-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.service-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -1px;
+}
+
+.service-intro {
+    font-size: 1.1rem;
+    color: #4a5c6d;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.service-intro strong {
+    color: var(--theme-blue);
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.service-watermark {
+    position: absolute;
+    top: -65px;
+    left: -30px;
+    font-size: 16rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(27, 72, 106, 0.04);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -5px;
+}
+
+/* ========================================= */
+/* --- VISUALS (Images & Badges) --- */
+/* ========================================= */
+.service-visual-wrapper {
+    position: relative;
+    border-radius: 24px;
+    height: 600px;
+    box-shadow: 0 40px 80px rgba(27, 72, 106, 0.12);
+    background-color: #fff;
+    z-index: 2; /* Ensures image is IN FRONT of the grid decoration */
+}
+
+.main-service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* Re-scaled, smaller, and more elegant floating badge */
+.floating-tech-badge {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    padding: 8px 18px 8px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    color: var(--navy-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 5;
+    /* Softened, much slower animation */
+    animation: gentleFloat 6s infinite alternate ease-in-out;
+}
+
+.floating-tech-badge .icon-box {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--theme-green), #8bb030);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-tech-badge i {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+@keyframes gentleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); } /* Reduced movement distance */
+}
+
+.flex-lg-row-reverse .floating-tech-badge {
+    right: auto;
+    left: -15px;
+}
+
+/* ========================================= */
+/* --- TECH FEATURE CARDS GRID --- */
+/* ========================================= */
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+}
+
+.tech-card {
+    padding: 25px;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--theme-green);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover {
+    background: #ffffff;
+    border-color: rgba(156, 193, 59, 0.3);
+    box-shadow: 0 20px 40px rgba(27, 72, 106, 0.08);
+    transform: translateY(-5px);
+}
+
+.tech-card:hover::before { opacity: 1; }
+
+.card-icon {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, var(--theme-blue), var(--theme-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.tech-card p {
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ========================================= */
+/* --- LAYOUT & SPACING --- */
+/* ========================================= */
+.mb-6 { margin-bottom: 8rem !important; }
+
+.service-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(27, 72, 106, 0.15), transparent);
+    margin: 5rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider-diamond {
+    width: 10px; height: 10px;
+    background: var(--theme-green);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(156, 193, 59, 0.4);
+}
+/* ========================================= */
+/* --- PERMANENT TRACKING BORDER TECH CARDS --- */
+/* ========================================= */
+
+.tech-card {
+    position: relative;
+    padding: 25px;
+    border-radius: 16px;
+    background: #ffffff; /* Solid white background */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 1;
+    /* Static border removed to let the tracking line lead the design */
+    border: none !important; 
+}
+
+/* THE TRACKING LINE: Always active and visible */
+.tech-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px; /* Positions the line exactly on the edge */
+    border-radius: 16px;
+    padding: 2px; /* Thickness of the tracking line */
+    
+    /* Conic gradient creates the "Laser Trace" effect */
+    background: conic-gradient(
+        from var(--border-angle),
+        transparent 60%,
+        rgba(156, 193, 59, 0.3) 75%,
+        var(--theme-green) 90%,
+        var(--theme-blue) 100%
+    );
+    
+    /* Masks the center so only the border edge shows the color */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    /* Continuous Animation */
+    animation: borderTrack 4s linear infinite;
+    opacity: 0.8; /* Subtle but clear resting visibility */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Interaction States */
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(27, 72, 106, 0.12);
+}
+
+.tech-card:hover::after {
+    opacity: 1; /* Brightens up on hover */
+    animation: borderTrack 2s linear infinite; /* Speeds up on hover for a "Real-time" feel */
+}
+
+/* --- THE ANIMATION ENGINE --- */
+/* Registering the angle property for smooth hardware-accelerated rotation */
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes borderTrack {
+    from { --border-angle: 0deg; }
+    to { --border-angle: 360deg; }
+}
+
+/* Internal Content Styling */
+.card-icon {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--theme-blue), var(--theme-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+}
+
+.tech-card p {
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    z-index: 3;
+}
+/* --- Entrance Animations --- */
+.anim-fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.anim-reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s ease; }
+.anim-reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.8s ease; }
+
+.is-visible.anim-fade-up { opacity: 1; transform: translateY(0); }
+.is-visible.anim-reveal-left { opacity: 1; transform: translateX(0); }
+.is-visible.anim-reveal-right { opacity: 1; transform: translateX(0); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+    .service-visual-wrapper { height: 400px; margin-bottom: 50px; }
+    .image-decor-grid { width: 90%; height: 90%; top: -15px; left: -10px; }
+    .floating-tech-badge { right: 15px; left: auto !important; bottom: -15px; }
+    .service-title { font-size: 2.2rem; }
+    .service-watermark { font-size: 8rem; top: -20px; left: -10px; }
+    .mb-6 { margin-bottom: 5rem !important; }
+}
+
+
+/* ========================================= */
+/* --- MAINTENANCE SECTION STYLES --- */
+/* ========================================= */
+
+.maintenance-section {
+    background-color: #ffffff; /* Contrast against the previous #f8fafc section */
+    overflow: hidden;
+}
+
+/* Ambient Background Glows */
+.glow-blue-maintenance {
+    width: 400px; height: 400px;
+    background-color: var(--theme-blue);
+    top: 20%; left: -15%;
+    opacity: 0.08;
+}
+.glow-green-maintenance {
+    width: 400px; height: 400px;
+    background-color: var(--theme-green);
+    bottom: -10%; right: -10%;
+    opacity: 0.08;
+}
+
+/* --- THE WAVE TEXT ANIMATION --- */
+.wave-text-animated {
+    background: linear-gradient(
+        to right, 
+        var(--navy-dark) 20%, 
+        var(--theme-green) 40%, 
+        var(--theme-blue) 60%, 
+        var(--navy-dark) 80%
+    );
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineWave 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes shineWave {
+    to { background-position: 200% center; }
+}
+
+.pulse-dot {
+    animation: dotPulse 2s infinite;
+}
+@keyframes dotPulse {
+    0% { box-shadow: 0 0 0 0 rgba(156, 193, 59, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(156, 193, 59, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(156, 193, 59, 0); }
+}
+
+/* ========================================= */
+/* --- PREMIUM BENEFIT CARDS (ATTRACTIVE RESTING STATE) --- */
+/* ========================================= */
+.benefit-card {
+    padding: 40px 30px;
+    border-radius: 24px;
+    background: #ffffff; /* Solid white ensures it pops against the background */
+    border: 1px solid rgba(27, 72, 106, 0.05); /* Very subtle structural frame */
+    
+    /* Beautiful, soft, always-on shadow to give depth BEFORE hovering */
+    box-shadow: 0 15px 35px rgba(27, 72, 106, 0.06), 0 5px 15px rgba(0,0,0,0.02);
+    
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+}
+
+/* ALWAYS VISIBLE bottom gradient accent */
+.benefit-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    height: 4px; /* Always visible to frame the card beautifully */
+    background: linear-gradient(90deg, var(--theme-blue), var(--theme-green));
+    transition: height 0.4s ease;
+    z-index: 0;
+}
+
+/* Hover State Enhancements */
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(27, 72, 106, 0.12);
+    border-color: rgba(156, 193, 59, 0.3);
+}
+
+.benefit-card:hover::after {
+    height: 8px; /* Grows slightly on hover for an interactive feel */
+}
+
+/* Keep text content above the accent line */
+.benefit-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* The Icon Box - Attractive BEFORE hover */
+.benefit-icon-wrapper {
+    width: 70px; height: 70px;
+    /* Soft, premium tinted background instead of flat grey */
+    background: linear-gradient(135deg, rgba(15, 86, 141, 0.03), rgba(156, 193, 59, 0.08));
+    border: 1px solid rgba(156, 193, 59, 0.15); /* Delicate green-tinted border */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 0 1px #ffffff; /* Inner white glow for a 3D effect */
+}
+
+/* Icon Box Hover - Morphs into a solid circle */
+.benefit-card:hover .benefit-icon-wrapper {
+    background: linear-gradient(135deg, var(--theme-blue), var(--theme-green));
+    border-radius: 50%;
+    transform: scale(1.1);
+    border-color: transparent;
+    box-shadow: 0 12px 24px rgba(156, 193, 59, 0.25);
+}
+
+/* The Icon itself - Gradient in resting state */
+.benefit-icon-wrapper i {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--theme-blue), var(--theme-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+/* Icon Hover - Turns white to contrast against the new background */
+.benefit-card:hover .benefit-icon-wrapper i {
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+}
+
+/* Typography Enhancements */
+.benefit-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-title {
+    color: var(--theme-blue); /* Title subtly shifts color on hover */
+}
+
+.benefit-desc {
+    color: #5c6c7b;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+/* --- UTILITIES & IAQ LISTS --- */
+.theme-blue-text { color: var(--theme-blue); }
+
+.utility-box {
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid var(--theme-blue);
+}
+
+.utility-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+}
+
+.custom-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-check-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: #4a5c6d;
+    line-height: 1.6;
+}
+
+.custom-check-list li::before {
+    content: "\f058"; /* FontAwesome check-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--theme-green);
+    font-size: 1.1rem;
+}
+
+.premium-border-box {
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border: 1px solid rgba(27, 72, 106, 0.1);
+}
+
+.icon-pulse-circle {
+    width: 50px; height: 50px;
+    background: var(--theme-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 6px rgba(15, 86, 141, 0.2);
+}
+
+/* --- IMAGE ANIMATIONS --- */
+.maintenance-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.image-decor-circle {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%; aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(156, 193, 59, 0.2), rgba(15, 86, 141, 0.1));
+    z-index: 0;
+    animation: rotateSlow 20s linear infinite;
+}
+
+@keyframes rotateSlow {
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.floating-maintenance-img {
+    width: 100%;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 30px 60px rgba(27, 72, 106, 0.15);
+    /* The core floating animation for the picture */
+    animation: imageFloat 6s ease-in-out infinite;
+}
+
+@keyframes imageFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.floating-stat-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -10px;
+    padding: 10px 15px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    animation: imageFloat 6s ease-in-out infinite;
+    animation-delay: 1s; /* Offset from main image */
+}
+
+.floating-stat-badge i {
+    font-size: 1.8rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+    .maintenance-image-wrapper { margin-top: 40px; }
+    .floating-stat-badge { left: 20px; }
+}
+
+/* ========================================= */
+/* --- WORK PROCESS SECTION STYLES --- */
+/* ========================================= */
+.process-section {
+    background-color: #f8fafc; 
+    overflow: visible; 
+    border-top: 1px solid rgba(27, 72, 106, 0.05);
+    display: block;
+}
+
+.sticky-process-content {
+    position: sticky;
+    top: 120px; 
+}
+
+/* --- THE TIMELINE CONTAINER & ANIMATED LINE --- */
+.process-timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+
+/* Continuous Moving DOTTED Line */
+.process-timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 84px; /* Perfectly centers behind the 90px circle */
+    width: 3px;
+    
+    /* Creates the dotted/dashed pattern */
+    background-image: repeating-linear-gradient(
+        to bottom, 
+        var(--theme-green) 0%, 
+        var(--theme-green) 50%, 
+        transparent 50%, 
+        transparent 100%
+    );
+    /* Size of the dot and the gap (3px wide, 16px total height for one dot+gap cycle) */
+    background-size: 3px 16px; 
+    
+    /* Animates the pattern downwards */
+    animation: marchingDots 1s linear infinite;
+    z-index: 0;
+    opacity: 0.5; /* Slight transparency so it looks like an ambient blueprint line */
+}
+
+/* The animation engine for the moving dots */
+@keyframes marchingDots {
+    from { background-position: 0 0; }
+    to { background-position: 0 16px; } /* Matches the background-size height to loop seamlessly */
+}
+/* --- THE PROCESS CARDS --- */
+.process-card {
+    background: #ffffff;
+    border: 1px solid rgba(27, 72, 106, 0.08);
+    border-radius: 20px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(27, 72, 106, 0.03);
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+/* Left edge accent bar that appears on hover */
+.process-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: linear-gradient(to bottom, var(--theme-blue), var(--theme-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Interaction */
+.process-card:hover {
+    transform: translateX(10px); 
+    box-shadow: 0 20px 40px rgba(27, 72, 106, 0.08);
+    border-color: rgba(156, 193, 59, 0.3);
+}
+
+.process-card:hover::before {
+    opacity: 1;
+}
+
+/* --- ROBUST NUMBER INDICATORS --- */
+/* This solid box ensures the line stays hidden behind the number */
+.step-indicator {
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2; /* Forces it above the animated line */
+    box-shadow: 0 5px 15px rgba(27, 72, 106, 0.05); /* Adds slight depth to separate it from the card */
+    border: 1px solid rgba(27, 72, 106, 0.03);
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--navy-dark); /* Fallback color */
+    background: linear-gradient(135deg, var(--theme-green), var(--theme-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- CONTENT TYPOGRAPHY --- */
+.step-content {
+    position: relative;
+    z-index: 2;
+}
+
+.step-content h4 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.process-card:hover .step-content h4 {
+    color: var(--theme-blue); 
+}
+
+.step-content p {
+    color: #5c6c7b;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 991px) {
+    .sticky-process-content {
+        position: relative;
+        top: 0;
+        text-align: center;
+    }
+    
+    .process-timeline-container::before {
+        left: 64px; /* Re-centers line for mobile padding (20px pad + 45px half-circle - 1px) */
+    }
+    
+    .process-card {
+        padding: 25px 20px;
+        gap: 20px;
+        align-items: flex-start; /* Reset alignment for mobile */
+    }
+
+    .step-indicator {
+        width: 90px;
+        height: 90px;
+    }
+}

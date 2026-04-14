@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Crisis LLP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assest/css/style.css">
+    <link rel="stylesheet" href="/assest/css/about.css">
+    <link rel="icon" type="image/png" href="./assest/img/favicon.jpeg" sizes="50x50">
+    
+    <link rel="apple-touch-icon" href="./assest/img/favicon.jpeg">
+<style>
+    /* ========================================= */
+/* --- PRIVACY POLICY & LEGAL DOCUMENTS --- */
+/* ========================================= */
+
+.privacy-policy-section {
+    background-color: #f8f9fa; /* Soft off-white background behind the card */
+}
+
+.document-card {
+    border-color: rgba(27, 72, 106, 0.08) !important;
+}
+
+/* Headings with a subtle green underline accent */
+.document-heading {
+    color: var(--navy-dark);
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.document-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--theme-green);
+    border-radius: 2px;
+}
+
+/* Document text styling for readability */
+.document-card p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Custom list styling for the document */
+.document-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.document-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    color: #6c757d; /* matches text-secondary */
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.document-list li strong {
+    color: var(--navy-dark);
+}
+
+/* Custom Green Dots for the list */
+.document-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--theme-green);
+    border-radius: 50%;
+}
+
+/* Contact Box inside the document */
+.contact-info-box {
+    border-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Mobile Adjustments for Legal Pages */
+@media (max-width: 767px) {
+    .page-header-section h1 {
+        font-size: 2.2rem;
+    }
+    .document-card {
+        padding: 30px 20px !important;
+    }
+    .document-heading {
+        font-size: 1.25rem;
+    }
+    .document-card p, .document-list li {
+        font-size: 0.95rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <div class="topbar py-2 d-none d-lg-block css-fade-in">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <span class="me-4"><i class="fa-solid fa-location-dot me-2 text-theme-blue"></i>15/457/b,saidham Building,Palakkad, Kerala</span>
+                <span>
+  <i class="fa-solid fa-envelope me-2 text-theme-blue"></i>
+  <a href="mailto:info@climatecrisis.in" class="text-decoration-none text-dark">
+    info@climatecrisis.in
+  </a>
+</span>
+            </div>
+            <div>
+                <a href="#" class="me-3"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="me-3"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top css-fade-in" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/assest/img/logoclimatecrisisfinal.png" alt="Climate Crisis LLP" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                 <div class="d-flex flex-wrap align-items-center gap-3 mt-3 mt-lg-0">
+    
+    <a href="https://wa.me/919074347030" class="text-decoration-none text-dark fw-bold text-nowrap">
+        <i class="fa-brands fa-whatsapp text-theme-green me-2" style="font-size: larger;"></i>+91 9074347030
+    </a>
+    
+    <a href="quote.html" class="btn btn-custom btn-custom-green flex-shrink-0">
+        Get A Quote <i class="fa-solid fa-arrow-right ms-1"></i>
+    </a>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- <section class="about-hero-section position-relative overflow-hidden">
+    <svg class="about-vector vector-gear-left" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2">
+        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+    </svg>
+    
+   <svg class="about-vector vector-mech-tool" width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        <polygon points="17,4 19.6,5.5 19.6,8.5 17,10 14.4,8.5 14.4,5.5"></polygon>
+        <circle cx="17" cy="7" r="1.2"></circle>
+    </svg>
+
+    <svg class="about-vector vector-elec-tool" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A6 6 0 1 0 7.5 9c0 1.25.5 2.4 1.41 3.5.76.76 1.23 1.52 1.41 2.5"></path>
+        <path d="M9 18h6"></path>
+        <path d="M10 22h4"></path>
+        <polyline points="13 8 11 11 13 11 11 14"></polyline>
+    </svg>
+
+    <div class="about-vector vector-circle-accent">
+        <div class="inner-dot"></div>
+    </div>
+
+    <div class="container text-center position-relative z-1">
+        <div class="about-anim-fade-up">
+            <h1 class="display-4 fw-bold text-white mb-2">About us</h1>
+            <p class="mb-0" style="color: rgba(255,255,255,0.8); font-weight: 500;">
+                <a href="#" style="color: white; text-decoration: none;">Home</a> 
+                <span class="mx-2">/</span> 
+                <span style="color: var(--theme-green);">About Us</span>
+            </p>
+        </div>
+    </div>
+</section> -->
+
+<section class="about-hero-section position-relative overflow-hidden">
+    
+    <video class="hero-bg-video" autoplay loop muted playsinline>
+        <source src="/assest/img/sectionbgvideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-video-overlay"></div>
+
+    <div class="container text-center position-relative z-3">
+        <div class="about-anim-fade-up">
+            <h1 class="display-4 fw-bold text-white mb-2">Privacy Policy</h1>
+            <p class="mb-0" style="color: rgba(255,255,255,0.9); font-weight: 500;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a> 
+                <span class="mx-2">/</span> 
+                <span style="color: var(--theme-green);">Privacy Policy</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="privacy-policy-section py-5 my-md-1">
+    <div class="container custom-container-1300">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="document-card bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    
+                    <p class="lead text-muted mb-5">
+                        <strong>Climate Crisis LLP</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (climatecrisis.in) or interact with our services, including our Engineering, Procurement, and Construction (EPC), MEP, and HVAC solutions.
+                    </p>
+
+                    <h3 class="document-heading">1. Information We Collect</h3>
+                    <p class="text-secondary">We may collect information about you in a variety of ways when you interact with our website or request our services:</p>
+                    <ul class="document-list mb-5">
+                        <li><strong>Personal Data:</strong> We collect personally identifiable information that you voluntarily provide to us when you request a quote, fill out a contact form, or communicate with us. This includes your Name, Email, Phone Number, Company, and Project Details.</li>
+                        <li><strong>Derivative Data:</strong> Our servers automatically collect certain information when you access our website, such as your IP address, browser type, and access times.</li>
+                        <li><strong>Cookies:</strong> We may use cookies and tracking technologies to customize your experience.</li>
+                    </ul>
+
+                    <h3 class="document-heading">2. How We Use Your Information</h3>
+                    <p class="text-secondary mb-3">Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. We may use the information to:</p>
+                    <ul class="document-list mb-5">
+                        <li>Provide estimates, process quotes, and deliver our EPC, MEP, and HVAC services.</li>
+                        <li>Respond to your customer service requests and support needs.</li>
+                        <li>Communicate regarding ongoing projects, billing, or site maintenance schedules.</li>
+                        <li>Improve our website design, functionality, and user experience.</li>
+                    </ul>
+
+                    <h3 class="document-heading">3. Disclosure of Your Information</h3>
+                    <p class="text-secondary mb-5">
+                        We respect your privacy and <strong>do not sell, trade, or rent your personal information to third parties.</strong> We may share information with trusted third-party service providers (like web hosts), when legally required by law, or in the event of a business transfer or merger.
+                    </p>
+
+                    <h3 class="document-heading">4. Data Security</h3>
+                    <p class="text-secondary mb-5">
+                        We use administrative, technical, and physical security measures to help protect your personal information. While we take reasonable steps to secure your data, no method of transmission is completely impenetrable.
+                    </p>
+
+                    <h3 class="document-heading">5. Your Rights Regarding Your Data</h3>
+                    <p class="text-secondary mb-5">
+                        Depending on your location, you may have the right to request access to, correction of, or deletion of the personal data we hold about you. Contact us to exercise these rights.
+                    </p>
+
+                    <h3 class="document-heading">6. Third-Party Websites</h3>
+                    <p class="text-secondary mb-5">
+                        Our website may contain links to third-party websites. Once you leave our site, any information you provide to these third parties is not covered by this Privacy Policy.
+                    </p>
+
+                    <h3 class="document-heading">7. Changes to This Privacy Policy</h3>
+                    <p class="text-secondary mb-5">
+                        We reserve the right to make changes to this Privacy Policy at any time. We will alert you about any changes by updating the "Effective Date" at the top of this document.
+                    </p>
+
+                    <hr class="my-5" style="border-color: rgba(0,0,0,0.08);">
+
+                    <h3 class="document-heading">8. Contact Us</h3>
+                    <p class="text-secondary mb-4">If you have any questions or concerns about this Privacy Policy, please contact our team:</p>
+                    
+                    <div class="contact-info-box bg-light p-4 rounded-4 border">
+                        <h4 class="fw-bold mb-3" style="color: var(--navy-dark);">Climate Crisis LLP</h4>
+                        <ul class="list-unstyled m-0 text-secondary" style="line-height: 1.8;">
+                            <li><i class="fa-solid fa-location-dot text-theme-green me-2"></i> 15/457/b, Saidham Building, Nadakkavu Parambu, Parali, Edathara, Palakkad, Kerala 678611, India</li>
+                            <li><i class="fa-solid fa-phone text-theme-green me-2"></i> +91 9074347030</li>
+                            <li><i class="fa-solid fa-envelope text-theme-green me-2"></i> info@climatecrisis.in</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="main-footer">
+    
+    <!-- <div class="footer-cta-wrapper">
+        <div class="container">
+            <div class="footer-cta-box">
+                <div class="footer-cta-text">
+                    <h3>Ready to upgrade your infrastructure?</h3>
+                    <p>Subscribe for industry insights and energy-saving tips.</p>
+                </div>
+                <form class="footer-subscribe-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="footer-content">
+        <div class="container">
+            <div class="row gx-lg-5">
+                
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0 footer-col">
+    <div class="d-flex align-items-center gap-3 mb-3">
+        <img src="/assest/img/logoclimatecrisisfinal.png" alt="Logo" class="footer-logo" style="max-height: 90px; width: auto;">
+        <h3 class="fw-bold m-0" style="color: #ffffff; font-size: 1.5rem; line-height: 1.2;">
+            Climate <span style="color: var(--theme-green);">Crisis LLP</span>
+        </h3>
+    </div>
+    
+    <p class="footer-about-text">
+        Setting the gold standard in climate solutions. From advanced HVAC systems to complete mechanical contracting, we build infrastructure that powers the future efficiently.
+    </p>
+    
+    <div class="footer-socials">
+        <a href="#" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="footer-social-link"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+</div>
+
+                <div class="col-lg-2 col-md-6 mb-5 mb-lg-0 footer-col">
+                    <h4 class="footer-widget-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="project.html">Our Projects</a></li>
+                        <li><a href="index.html#testi-section">Testimonials</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 footer-col">
+                    <h4 class="footer-widget-title">Our Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="project.html#hvac">HVAC Systems</a></li>
+                        <li><a href="service.html#hvac-section">Mechanical Contracting</a></li>
+                        <li><a href="service.html#elec-section">Electrical Repairing</a></li>
+                        <li><a href="service.html#maintenance">Facility Maintenance</a></li>
+                        <li><a href="project.html">Energy Optimization</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-col">
+                    <h4 class="footer-widget-title">Get In Touch</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>
+                                <a href="https://maps.app.goo.gl/d8g392yd3MUz7Nhz6" target="_blank" class="contact-link">
+                                    15/457/b, Saidham Building,<br>
+                                    Nadakkavu Parambu, Parali, Edathara,<br>
+                                    Palakkad, Kerala, India, 678611
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>
+                                <a href="tel:+919074347030" class="contact-link">+91 90743 47030</a><br>
+                                <!-- <a href="https://wa.me/919074347030" target="_blank" class="contact-link mt-1 d-inline-block">
+                                    <i class="fa-brands fa-whatsapp" style="color: var(--theme-green);"></i> WhatsApp Us
+                                </a> -->
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>
+                                <a href="mailto:info@climatecrisis.in" class="contact-link">info@climatecrisis.in</a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            <span class="contact-link" style="cursor: default;">
+                                <strong>Working Hours:</strong><br>
+                                9:00 AM to 6:00 PM
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    &copy; 2026 Climate Crisis. All Rights Reserved. <br class="d-md-none">
+                    <span class="ms-md-2 border-start ps-md-2 d-none d-md-inline"></span>
+                    Designed by <a href="https://www.startupsahay.com/" target="_blank" style="color: var(--theme-green); text-decoration: none; font-weight: 700; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Startup Sahay</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-bottom-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <!-- <a href="#">Cookie Policy</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assest/js/script.js"></script>
+    <script>// Ensure this runs after the HTML is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Create an Intersection Observer specifically for the About page animations
+    const aboutObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Add the class that triggers the CSS animation
+                entry.target.classList.add('play-anim');
+                
+                // Stop observing once animated so it doesn't repeat unnecessarily
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.15 // Triggers when 15% of the element is visible
+    });
+
+    // 1. Trigger simple fade up elements
+    const fadeElements = document.querySelectorAll('.about-anim-fade-up');
+    fadeElements.forEach(el => aboutObserver.observe(el));
+
+    // 2. Trigger staggered elements with sequential delays
+    const staggerElements = document.querySelectorAll('.about-anim-stagger');
+    staggerElements.forEach((el, index) => {
+        // Automatically adds a 0.15s delay to each subsequent item in the grid!
+        el.style.animationDelay = `${index * 0.15}s`;
+        aboutObserver.observe(el);
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Check if IntersectionObserver is supported (modern browsers)
+    if ('IntersectionObserver' in window) {
+        
+        const aboutObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When an element scrolls into view...
+                if (entry.isIntersecting) {
+                    // Add the class that plays the CSS animation
+                    entry.target.classList.add('play-anim');
+                    
+                    // Stop watching it once it's already animated
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { 
+            threshold: 0.15 // Triggers when 15% of the element is visible
+        });
+
+        // 1. Trigger simple fade up elements
+        const fadeElements = document.querySelectorAll('.anim-fade-up');
+        fadeElements.forEach(el => aboutObserver.observe(el));
+
+        // 2. Trigger staggered elements with sequential delays
+        const staggerElements = document.querySelectorAll('.anim-stagger');
+        staggerElements.forEach((el, index) => {
+            // Adds a small delay to each subsequent item in the list
+            el.style.animationDelay = `${index * 0.15}s`;
+            aboutObserver.observe(el);
+        });
+
+    } else {
+        // Fallback for very old browsers (immediately show all elements)
+        document.querySelectorAll('.anim-fade-up, .anim-stagger').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }
+
+});
+
+</script>
+</body>
+
+</html>

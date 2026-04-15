@@ -814,23 +814,21 @@ body {
 /* ========================================= */
 /* --- Services Section Styles --- */
 /* ========================================= */
-/* =========================================
-   SERVICES SECTION STYLES (RESTORED)
-   ========================================= */
+
 
 .services-section {
     background: radial-gradient(circle at top right, #1b486a 0%, #0c2b42 60%, #0c3556 100%);
     position: relative;
     overflow: hidden;
-    padding: 80px 0; 
+    padding: 40px 0; 
 }
 
 /* Background Decorations */
 .svc-bg-vector { position: absolute; pointer-events: none; z-index: 0; max-width: 100%; height: auto; }
-.svc-vector-top-left { top: -2%; left: -2%; opacity: 0.15; animation: rotateSlow 40s linear infinite; width: 300px; }
-.svc-vector-bottom-left { bottom: 5%; left: 2%; opacity: 0.1; width: 250px; }
-.svc-vector-top-right { top: 5%; right: 5%; opacity: 0.8; width: 200px; }
-.svc-vector-bottom-right { bottom: -5%; right: -2%; opacity: 0.1; width: 350px; }
+.svc-vector-top-left { top: -2%; left: -2%; opacity: 0.15; animation: rotateSlow 40s linear infinite; width: 200px; }
+.svc-vector-bottom-left { bottom: 5%; left: 2%; opacity: 0.1; width: 150px; }
+.svc-vector-top-right { top: 5%; right: 5%; opacity: 0.8; width: 150px; }
+.svc-vector-bottom-right { bottom: -5%; right: -2%; opacity: 0.1; width: 280px; }
 
 /* Hide decorative vectors on very small screens to prevent clutter */
 @media (max-width: 767px) {
@@ -846,13 +844,13 @@ body {
 .service-card {
     position: relative;
     border-radius: 24px; 
-    overflow: hidden; /* CRITICAL: Prevents content from bleeding out */
+    overflow: hidden; 
     height: 450px; 
     cursor: pointer;
     z-index: 2;
     background: transparent; 
     transition: transform 0.4s ease;
-    display: block; /* Required for absolute positioning inside */
+    display: block; 
 }
 
 /* Card Background Image */
@@ -1344,7 +1342,7 @@ body {
     padding: 40px 0;
     background-color: #ffffff; 
     overflow: hidden;
-    max-width: 1450px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -2625,4 +2623,4 @@ body {
 
 .contact-link:hover {
     color: var(--theme-green);
-}
+} 
